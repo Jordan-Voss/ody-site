@@ -7,7 +7,7 @@ function HeroSection() {
 	return (
 		<div className='hero-container'>
 			<video src='/videos/ody2.mp4' autoPlay='true' loop muted />
-			<h1>Odysey Strength</h1>
+			<h1>&nbsp;&nbsp;Odysey Strength&nbsp;&nbsp;</h1>
 			<p>An Epic Journey</p>
 			<div className='hero-btns'>
 				<Button

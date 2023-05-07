@@ -8,7 +8,6 @@ import HamburgerMenu from 'react-hamburger-menu';
 function Navbar() {
 	const [click, setClick] = useState(false);
 	const [button, setButton] = useState(true);
-	const [isOpen, setIsOpen] = useState(false);
 	const [dropdown, setDropdown] = useState(false);
 
 	const handleClick = () => setClick(!click);
@@ -36,38 +35,10 @@ function Navbar() {
 			setButton(true);
 		}
 	};
-	const [show, setShow] = useState(true);
-	const [lastScrollY, setLastScrollY] = useState(0);
-
-	const controlNavbar = () => {
-		if (typeof window !== 'undefined') {
-			if (window.scrollY > lastScrollY) {
-				// if scroll down hide the navbar
-				setShow(false);
-			} else {
-				// if scroll up show the navbar
-				setShow(true);
-			}
-
-			// remember current page location to use in the next move
-			setLastScrollY(window.scrollY);
-		}
-	};
 
 	useEffect(() => {
 		showButton();
-		if (typeof window !== 'undefined') {
-			window.addEventListener('scroll', controlNavbar);
-
-			// cleanup function
-			return () => {
-				window.removeEventListener('scroll', controlNavbar);
-			};
-		}
-		// return () => {
-		// 	window.removeEventListener('scroll', controlNavbar);
-		// };
-	}, [lastScrollY]);
+	}, []);
 	window.addEventListener('resize', showButton);
 	const changeNavbarColor = () => {
 		if (window.scrollY >= 50) {
@@ -79,13 +50,11 @@ function Navbar() {
 	window.addEventListener('scroll', changeNavbarColor);
 	return (
 		<>
-			<nav className={`active ${show && 'hidden'}`}>
+			<nav className="navbar">
 				<div
 					className={
 						isNavScrolled
-							? show
-								? 'navbar-container scrolled nav__blue'
-								: 'navbar-container scrolled'
+							? 'navbar-container scrolled'
 							: 'navbar-container'
 					}
 				>
@@ -120,7 +89,7 @@ function Navbar() {
 					<ul className={click ? 'nav-menu active' : 'nav-menu'}>
 						<li className='nav-item'>
 							<Link to='/' className='nav-links' onClick={closeMobileMenu}>
-								{show.toString()}
+								Home
 							</Link>
 						</li>
 						<li
@@ -133,7 +102,7 @@ function Navbar() {
 								className='nav-links'
 								onClick={closeMobileMenu}
 							>
-								Services <i className='fas fa-caret-down' />
+								Services  <i className='fas fa-caret-down' />
 							</Link>
 							{dropdown && <Dropdown />}
 						</li>
