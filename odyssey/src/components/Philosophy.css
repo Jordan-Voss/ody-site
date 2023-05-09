@@ -15,6 +15,9 @@
 .container-phspy {
     position: relative;
     background-color: black;
+    max-height: calc(100vh - 80px);
+    /* float: left; */
+
   }
 
 .container-phspy::before {
@@ -39,14 +42,22 @@
 } */
 .phspy-img {
     display: block;
-    max-width: 100%;
-    height: auto;
+    width: 100%;
+    object-fit:cover;
+/* float: left; */
+/* left: 0;
+margin: 0;
+padding: 0; */
+    max-height: calc(100vh - 80px);
+
+    /* height: auto; */
+
   }
   .overlay {
     position: absolute;
-    top: 0;
+    top: 20px;
     right: 0;
-    bottom: 0;
+    /* bottom: -20px; */
     width: 50%;
     height: 100%;
     /* padding: 2rem; */
@@ -61,7 +72,7 @@
     font-family: 'Roboto', sans-serif;
     width: 100%;
     height: 100%;
-    font-size: 4.75vw;
+    font-size: 4.55vw;
     z-index: 1;
     right: 0;
     /* top: -80px; */
@@ -107,7 +118,7 @@
   } */
 
   .phspy-btns {
-    margin-top: 32px;
+    /* margin-top: 12px; */
     align-items: center;
   }
   

@@ -1,0 +1,86 @@
+.pricing {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top:20px;
+    margin-bottom:20px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .bld {
+    font-weight: bold;
+  }
+  
+  .butn {
+    top:5%;
+  }
+  .tier {
+    border: 1px solid #ddd;
+    padding: 3rem;
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+    width: 30%;
+    transform: translateY(20px);
+
+  }
+  
+  .tier.featured {
+    border: 2px solid black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transform: translateY(-10px);
+  }
+  
+  .title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .price {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .features {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+  }
+  
+  .features li {
+    margin-bottom: 0.5rem;
+  }
+  
+  /* .button {
+    background-color: #f90;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 1rem;
+    transition: all 0.2s ease-in-out;
+  } */
+  
+  /* .button:hover {
+    background-color: #d58000;
+    cursor: pointer;
+  } */
+  /* @media only screen and (max-width: 767px) {
+    .pricing {
+        flex-direction: column;
+        align-items: center;
+        
+      }
+  } */
+  @media only screen and (max-width: 767px) {
+    .pricing {
+      flex-direction: column;
+      align-items: center;
+      
+    }
+  
+    .tier {
+      margin-bottom: 2rem;
+      width: 80%;
+    }
+  }
+  
