@@ -5,9 +5,10 @@ import Footer from "../components/Footer";
 import Philosophy from "../components/Philosophy";
 import About from "../components/About";
 import Pricing from "../components/Pricing";
-import Spotify from "../components/Spotify";
+// import Spotify from "../components/Spotify";
 import Slideshow from "../components/Slideshow";
 import Gallery from "../components/Gallery";
+import SpotifyComponent from "../components/Spotify";
 
 function Home() {
   return (
@@ -16,7 +17,7 @@ function Home() {
       <About />
       <Philosophy />
       <Pricing />
-      <Spotify />
+      <SpotifyComponent />
       <Gallery />
 
       <Footer />

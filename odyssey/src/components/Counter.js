@@ -1,34 +1,36 @@
 import React, { useState, useRef, useEffect } from "react";
 
-const Counter = () => {
+const Counter = ({ cnt }) => {
   const [count, setCount] = useState(0);
   const countRef = useRef(null);
+  const observerRef = useRef(null);
 
   useEffect(() => {
-    const options = {
-      rootMargin: "0px",
-      threshold: 1.0
-    };
-
-    const observer = new IntersectionObserver(entries => {
-      if (entries[0].isIntersecting) {
-        let i = 0;
-        const interval = setInterval(() => {
-          if (i <= 187) {
-            setCount(i++);
+    observerRef.current = new IntersectionObserver(entries => {
+      const [entry] = entries;
+      if (entry.isIntersecting) {
+        let startCount = 0;
+        const endCount = cnt + 1;
+        const duration = 1000; // in milliseconds
+        const stepTime = Math.abs(
+          Math.floor(duration / (endCount - startCount))
+        );
+        const counter = setInterval(() => {
+          if (startCount >= endCount) {
+            clearInterval(counter);
           } else {
-            clearInterval(interval);
+            setCount(startCount++);
           }
-        }, 10);
-
-        observer.unobserve(countRef.current);
+        }, stepTime);
       }
-    }, options);
+    });
 
-    observer.observe(countRef.current);
+    observerRef.current.observe(countRef.current);
 
     return () => {
-      observer.unobserve(countRef.current);
+      if (countRef.current && observerRef.current) {
+        observerRef.current.unobserve(countRef.current);
+      }
     };
   }, []);
 
