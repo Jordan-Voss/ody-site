@@ -1,0 +1,177 @@
+.image-header-container {
+    /* background: url('/images/img-home.jpg') center center/cover no-repeat; */
+    transform: translate(0%, -80px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    /* top: 0;
+    left: 0;
+    position: relative;
+    width: 100%;
+    height: calc(70vh + 80px); */
+    /* display: flex; */
+    /* flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+    /* position: relative; */
+
+    /* box-shadow: inset 0 0 0 1000px rgb(0, 0, 0); */
+    /* object-fit: cover; */
+    /* align-self: center; */
+    /* text-align: center; */
+    /* */
+}
+
+/* .image-header-container img {
+    object-fit: cover;
+
+    object-position: center center;
+} */
+
+/* .image-header-container-overlay {
+    /* transform: translate(0%, -160px); */
+/* position: absolute;
+    top: 0%;
+    /* left: 0; */
+/* width: 100%;
+height: 81vh;
+z-index: 1;
+background-color: rgba(0, 0, 0, 0.6);
+/* black with 50% opacity */
+/* pointer-events: none; */
+/* } */
+
+.content-overlay {
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    /* display: inline-block; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 2;
+
+
+}
+
+.content-overlay>h1 {
+    color: #fff;
+    margin-left: -25%;
+    margin-top: 20%;
+    /* font-size: 100px; */
+    background-image: linear-gradient(rgba(255, 255, 255, 0) 60%, rgb(23, 207, 151) 0%);
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: initial;
+    font-size: calc((4 - 1) * 1.2vw + 1rem);
+    /* flex: 1; */
+    /* display: block; */
+
+}
+
+/* 
+.h1-content::after {
+    content: "";
+    width: 40%;
+    height: 5vh;
+    background: #17cf97;
+    position: absolute;
+    margin-top: 35%;
+    top: 0;
+    margin-left: 15%;
+    z-index: -1;
+
+
+    /* bottom: -4px; */
+/* top: 0; */
+/* bottom: 0; */
+/* left: 20px; */
+/* }  */
+.content-overlay>h4 {
+    white-space: pre-wrap;
+    text-align: left;
+    /* flex: 2; */
+    /* display: block; */
+    margin-top: -1%;
+    color: #fff;
+    /* margin-left: -25%; */
+    /* font-size: 30px; */
+    width: 70%;
+    font-size: calc((2.2 - 1) * 1.2vw + 1rem);
+}
+
+
+.coaches-container {
+    transform: translate(0%, -80px);
+    position: relative;
+    height: 80vh;
+
+}
+
+
+.coaches-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.coaches-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+
+/* .header-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../public/images/Adam\ Phillips\ \(37\ of\ 39\)\(1\).jpeg');
+    background-size: cover;
+    background-position: center;
+} */
+
+/* .background-position: center; */
+
+/* .img-hdr {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+
+    padding-top: 50%;
+    padding-left: 50%;
+    transform: translate(-50%, -50%);
+
+} */
+
+/* .header-image::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(70vh + 80px);
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+} */

@@ -5,9 +5,14 @@ import {
   AboutMenuItems,
 } from "./MenuItems";
 import "./Dropdown.css";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
-function MobileDropdown({ mobileDropdown, closeMobileMenu, menuItems }) {
+function MobileDropdown({
+  mobileDropdown,
+  closeMobileMenu,
+  menuItems,
+  subMenuItem,
+}) {
   const menu =
     menuItems !== "about"
       ? menuItems === "coaching"
@@ -22,13 +27,19 @@ function MobileDropdown({ mobileDropdown, closeMobileMenu, menuItems }) {
       {menu.map((item, index) => {
         return (
           <li key={index} className="active-dropdown">
-            <Link
+            <NavLink
               to={item.path}
               onClick={closeMobileMenu}
-              className={mobileDropdown ? "mobile-dropdown" : "mobile-hidden"}
+              className={
+                mobileDropdown
+                  ? subMenuItem == item.title
+                    ? "mobile-dropdown-active"
+                    : "mobile-dropdown"
+                  : "mobile-hidden"
+              }
             >
               {item.title}
-            </Link>
+            </NavLink>
           </li>
         );
       })}

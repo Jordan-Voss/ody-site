@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "./Button";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 import Dropdown from "./Dropdown";
 import HamburgerMenu from "react-hamburger-menu";
 import MobileDropdown from "./MobileDropdown";
+import { useLocation } from "react-router-dom";
 
-function Navbar() {
+function Navbar(activePage, activeSubPage) {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
   const [dropdown1, setDropdown1] = useState(false);
@@ -39,6 +40,7 @@ function Navbar() {
       setDropdown1(false);
     } else {
       setDropdown1(true);
+      console.log("aaaa");
     }
   };
 
@@ -114,19 +116,28 @@ function Navbar() {
       setisNavScrolled(false);
     }
   };
+  const location = useLocation();
+  console.log(location.pathname);
   //   window.addEventListener("scroll", changeNavbarColor);
   return (
     <>
       <nav className={isNavScrolled ? "scrolled" : "notScrolled"}>
-        <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
+        <NavLink to="/" className="navbar-logo" onClick={closeMobileMenu}>
           <img src="/images/ody2.png" className="lgo" alt="logo"></img>
-        </Link>
+        </NavLink>
 
         <div>
           <ul id="navbar" className={click ? "#navbar active" : "#navbar"}>
             {window.innerWidth < 769 ? (
+              <li className="mble">
+                <NavLink to="/" className="nav-links" onClick={closeMobileMenu}>
+                  Home
+                </NavLink>
+              </li>
+            ) : null}
+            {window.innerWidth < 769 ? (
               <>
-                <li className="mble active" onClick={onClickMobile1}>
+                <li className="mble" onClick={onClickMobile1}>
                   About &nbsp;
                   <i className="fas fa-caret-down" />
                 </li>
@@ -139,18 +150,20 @@ function Navbar() {
                     mobileDropdown={mobileDropdown1}
                     closeMobileMenu={closeMobileMenu}
                     menuItems="about"
+                    subMenuItem="a"
                   ></MobileDropdown>
                 </div>
               </>
             ) : (
               <li
-                className="active"
+                className="mble"
                 onMouseEnter={onMouseEnter1}
                 onMouseLeave={onMouseLeave1}
               >
-                <Link to="/" className="nav-links" onClick={closeMobileMenu}>
-                  About <i className="fas fa-caret-down" />
-                </Link>
+                <NavLink to="/" className="nav-links" onClick={closeMobileMenu}>
+                  <span className="nav-text">About</span>
+                  <i className="fas fa-caret-down" />
+                </NavLink>
                 {dropdown1 && <Dropdown menuItems="about" />}
               </li>
             )}
@@ -178,13 +191,14 @@ function Navbar() {
                 onMouseEnter={onMouseEnter2}
                 onMouseLeave={onMouseLeave2}
               >
-                <Link
+                <NavLink
                   to="/services"
                   className="nav-links"
                   onClick={closeMobileMenu}
                 >
-                  Resources <i className="fas fa-caret-down" />
-                </Link>
+                  <span className="nav-text">Resources</span>
+                  <i className="fas fa-caret-down" />
+                </NavLink>
                 {dropdown2 && <Dropdown menuItems="resources" />}
               </li>
             )}
@@ -193,44 +207,45 @@ function Navbar() {
               onMouseEnter={onMouseEnter3}
               onMouseLeave={onMouseLeave3}
             >
-              <Link
+              <NavLink
                 to="/services"
                 className="nav-links"
                 onClick={closeMobileMenu}
               >
-                Coaching <i className="fas fa-caret-down" />
-              </Link>
+                <span className="nav-text">Coaching</span>
+                <i className="fas fa-caret-down" />{" "}
+              </NavLink>
               {dropdown3 && <Dropdown menuItems="coaching" />}
             </li>
             <li>
-              <Link
+              <a
                 className="social-icon-link facebook"
                 to="/"
                 target="_blank"
                 aria-label="Facebook"
               >
                 <i className="fab fa-facebook-f" />
-              </Link>
+              </a>
             </li>
             <li>
-              <Link
+              <a
                 className="social-icon-link instagram"
                 to="/"
                 target="_blank"
                 aria-label="Instagram"
               >
                 <i className="fab fa-instagram" />
-              </Link>
+              </a>
             </li>
             <li>
-              <Link
+              <a
                 className="social-icon-link email"
                 to={`mailto:jordan@jordanvoss.online`}
                 target="_blank"
                 aria-label="Youtube"
               >
                 <i className="fas fa-envelope" />
-              </Link>
+              </a>
             </li>
           </ul>
         </div>
@@ -260,11 +275,11 @@ function Navbar() {
 //             isNavScrolled ? "navbar-container scrolled" : "navbar-container"
 //           }
 //         >
-//           <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
+//           <NavLink to="/" className="navbar-logo" onClick={closeMobileMenu}>
 //             {/* TRVL
 // 						<i className='fab fa-typo3' /> */}
 //             <img src="/images/ody2.png" className="lgo" alt="logo"></img>
-//           </Link>
+//           </NavLink>
 //           <div className="menu-icon">
 //             <HamburgerMenu
 //               isOpen={click}
@@ -287,9 +302,9 @@ function Navbar() {
 //               onMouseEnter={onMouseEnter1}
 //               onMouseLeave={onMouseLeave1}
 //             >
-//               <Link to="/" className="nav-links" onClick={closeMobileMenu}>
+//               <NavLink to="/" className="nav-links" onClick={closeMobileMenu}>
 //                 About <i className="fas fa-caret-down" />
-//               </Link>
+//               </NavLink>
 //               {dropdown1 && <Dropdown menuItems="about" />}
 //             </li>
 //             <li
@@ -297,13 +312,13 @@ function Navbar() {
 //               onMouseEnter={onMouseEnter2}
 //               onMouseLeave={onMouseLeave2}
 //             >
-//               <Link
+//               <NavLink
 //                 to="/services"
 //                 className="nav-links"
 //                 onClick={closeMobileMenu}
 //               >
 //                 Resources <i className="fas fa-caret-down" />
-//               </Link>
+//               </NavLink>
 //               {dropdown2 && <Dropdown menuItems="resources" />}
 //             </li>
 //             <li
@@ -311,55 +326,55 @@ function Navbar() {
 //               onMouseEnter={onMouseEnter3}
 //               onMouseLeave={onMouseLeave3}
 //             >
-//               <Link
+//               <NavLink
 //                 to="/services"
 //                 className="nav-links"
 //                 onClick={closeMobileMenu}
 //               >
 //                 Coaching <i className="fas fa-caret-down" />
-//               </Link>
+//               </NavLink>
 //               {dropdown3 && <Dropdown menuItems="coaching" />}
 //             </li>
 //             <div className="social-icons nav-item">
-//               <Link
+//               <NavLink
 //                 className="social-icon-link facebook"
 //                 to="/"
 //                 target="_blank"
 //                 aria-label="Facebook"
 //               >
 //                 <i className="fab fa-facebook-f" />
-//               </Link>
-//               <Link
+//               </NavLink>
+//               <NavLink
 //                 className="social-icon-link instagram"
 //                 to="/"
 //                 target="_blank"
 //                 aria-label="Instagram"
 //               >
 //                 <i className="fab fa-instagram" />
-//               </Link>
-//               <Link
+//               </NavLink>
+//               <NavLink
 //                 className="social-icon-link email"
 //                 to={`mailto:jordan@jordanvoss.online`}
 //                 target="_blank"
 //                 aria-label="Youtube"
 //               >
 //                 <i className="fas fa-envelope" />
-//               </Link>
+//               </NavLink>
 //             </div>
 //             <li>
-//               <Link
+//               <NavLink
 //                 to="/sign-up"
 //                 className="nav-links-mobile"
 //                 onClick={closeMobileMenu}
 //               >
 //                 Join Now
-//               </Link>
+//               </NavLink>
 //             </li>
 //           </ul>
 //           {button && (
-//             <Link to="/sign-up" className="btn-mobile">
+//             <NavLink to="/sign-up" className="btn-mobile">
 //               <button className={"btn btn--outline"}>Join Now</button>
-//             </Link>
+//             </NavLink>
 //           )}
 //         </div>
 //       </nav>

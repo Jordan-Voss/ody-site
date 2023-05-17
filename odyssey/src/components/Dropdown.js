@@ -5,7 +5,7 @@ import {
   AboutMenuItems,
 } from "./MenuItems";
 import "./Dropdown.css";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 function Dropdown(menuItems) {
   const [click, setClick] = useState(false);
@@ -28,13 +28,14 @@ function Dropdown(menuItems) {
         {menu.map((item, index) => {
           return (
             <li key={index}>
-              <Link
+              <NavLink
                 className={item.cName}
                 to={item.path}
                 onClick={() => setClick(false)}
+                // activeClassName="big-active"
               >
                 {item.title}
-              </Link>
+              </NavLink>
             </li>
           );
         })}

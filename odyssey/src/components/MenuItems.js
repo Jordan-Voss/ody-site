@@ -23,8 +23,8 @@ export const ResourcesMenuItems = [
 
 export const AboutMenuItems = [
   {
-    title: "a",
-    path: "/products",
+    title: "Coaches",
+    path: "/coaches",
     cName: "dropdown-link",
   },
   {

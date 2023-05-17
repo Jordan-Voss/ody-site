@@ -1,14 +1,33 @@
 .button {
-    background-color: black;
-    border: 2px solid white;
-    color: white;
-    padding: 1rem;
-    font-size: 1rem;
-    margin-bottom: 10%;
-    transition: background-color 0.7s ease-in-out, color 0.7s ease-in-out;
-  }
-  
-  .button:hover {
-    background-color: white;
-    color: black;
-  }
+  background-color: black;
+  border: 2px solid white;
+  color: white;
+  padding: 1rem;
+  font-size: 1rem;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.button:hover {
+  background-color: white;
+  color: black;
+}
+
+.button-phsy {
+  background-color: black;
+  border: 2px solid white;
+  color: white;
+  padding: 1rem;
+  font-size: 1rem;
+  width: 40vw;
+  position: absolute;
+  margin-top: 90%;
+  z-index: 10;
+  /* height: 7; */
+  margin-bottom: 10%;
+  transition: background-color 0.7s ease-in-out, color 0.7s ease-in-out;
+}
+
+.button-phsy:hover {
+  background-color: white;
+  color: black;
+}
