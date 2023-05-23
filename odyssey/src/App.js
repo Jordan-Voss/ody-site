@@ -7,6 +7,8 @@ import Services from "./pages/Services";
 import Products from "./pages/Products";
 import SignUp from "./pages/SignUp";
 import Coaches from "./pages/Coaches";
+// import "~slick-carousel/slick/slick.css";
+// import "~slick-carousel/slick/slick-theme.css";
 
 function App() {
   return (

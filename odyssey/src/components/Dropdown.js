@@ -15,8 +15,7 @@ function Dropdown(menuItems) {
     menuItems.menuItems !== "about"
       ? menuItems.menuItems === "coaching"
         ? CoachingMenuItems
-        : //   console.log("coaching")
-          ResourcesMenuItems
+        : ResourcesMenuItems
       : AboutMenuItems;
   console.log("wrgewrherher" + menuItems.menuItems);
   return (
