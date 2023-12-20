@@ -1,30 +1,7 @@
-.hero-team__people {
-    /* display: flex; */
-
-    display: flex;
-    flex: 1 0 auto;
-    /* justify-content: space-between; */
-    /* list-style-type: none; */
-    /* overflow-x: scroll; */
-    align-items: flex-end;
-    overflow: hidden;
-    /* margin: 0 10%; */
-    /* max-width: 100%; */
-    /* padding: 0; */
-    /* position: relative; */
-    width: 100%;
-    /* position: absolute; */
-    height: 70vh;
-    /* overflow-x: hidden */
-    /* bottom: 0; */
-    /* left: 0; */
-    /* transform: translate(0%, 80px); */
-    /* overflow: hidden; */
-    /* overflow-x: hidden; */
-}
-
 .hero-team__title {
     font-size: 30px;
+    color: white;
+    background-color: #242222;
 }
 
 .hero-team__inner {
@@ -34,134 +11,23 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+    margin-bottom: 20px;
 }
 
-.owl-carousel {
-    width: 100%;
-    height: 70vh;
-    /* overflow-x: hidden */
-    /* Adjust the height as needed */
-    /* overflow-x: hidden;
-    overflow-y: hidden; */
-    /* white-space: nowrap; */
-}
+.hero-team-text {
+    color: white;
+    background-color: #242222;
 
-.alice-carousel__wrapper {
-    display: flex;
-    position: absolute;
-    bottom: 0;
-    width: 100vw;
-    display: flex;
-    height: 70vh;
-    /* background-color: red; */
-    justify-content: center;
-    overflow-x: hidden
-        /* overflow-x: hidden */
-}
-
-.owl-nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    justify-content: space-between;
-    /* align-items: center; */
-    width: 100%;
-    z-index: 1;
-}
-
-.owl-carousel .owl-stage {
-    /* overflow: hidden; */
-}
-
-.carousel-container .alice-carousel__prev-btn,
-.carousel-container .alice-carousel__next-btn {
-    position: absolute;
-    top: 50%;
-
-    transform: translateY(-50%);
-}
-
-.carousel-container .alice-carousel__prev-btn {
-    left: 0;
-}
-
-.carousel-container .alice-carousel__next-btn {
-    right: 0;
-}
-
-.owl-carousel .owl-nav .owl-prev,
-.owl-carousel .owl-nav .owl-next {
-    /* background-color: ; */
-    /* Customize the background color */
-    /* color: #000; */
-    /* Customize the arrow color */
-    padding: 10px;
-    font-size: 100px;
-    height: 60px;
-    background: none;
-    color: inherit;
-    border: none;
-
-    font: inherit;
-    /* Customize the font size */
-
-    cursor: pointer;
-    /* position: relative; */
-    z-index: 2;
-}
-
-.fa-lg {
-    font-size: 50px;
-    color: lightgray;
-}
-
-
-.alice-carousel__stage-item {
-    width: 45%;
-    /* Adjust the width as needed */
-    flex-shrink: 0;
-    /* margin-right: 10px; */
-    /* Adjust the margin as needed */
-}
-
-.item img {
-    width: auto;
-    height: 60vh;
-}
-
-.item img:hover {
-    transform: scale(1.2);
-    transition: 0.5s ease-in-out;
-}
-
-
-
-.owl-stage-outer {
-    position: absolute;
-    bottom: 0;
-    height: 60vh;
-
-}
-
-.carousel-container {
-    position: absolute;
-    bottom: 0;
-    width: 100vw;
-    display: flex;
-    height: 70vh;
-    /* background-color: red; */
-    justify-content: center;
-    overflow-x: hidden
 }
 
 .hero-team {
     /* -ms-flex-align: center; */
+    margin-top: -10vh;
     align-items: center;
-    background: #ddf url('https://etch.co/images/team/triangle-valley.svg');
+    background: url('../../public/images/Promo\ \(5\ of\ 20\).JPG');
     background-position: bottom;
     background-repeat: no-repeat;
-    background-size: auto 70%;
+    background-size: cover;
     display: flex;
     /* -ms-flex: 1 0 auto; */
     flex: 1 0 auto;
@@ -170,7 +36,7 @@
     justify-content: space-between;
     /* padding-top: 3.75em; */
     text-align: center;
-    transform: translate(0%, -80px);
+    /* transform: translate(0%, -80px); */
 
     height: 100vh;
 }
@@ -188,53 +54,22 @@
 
 
 
-.hero-team__person--front {
-    transform: scale(1.05);
-    transform-origin: center bottom;
-    z-index: 4;
-}
-
-.hero-team__person--row-2 {
-    transform: scale(1.05);
-    transform-origin: center bottom;
-    z-index: 3;
-}
-
-.hero-team__person--row-3 {
-    transform: scale(1.05);
-    transform-origin: center bottom;
-    z-index: 2;
-    /* background-color: rebeccapurple; */
-
-}
-
-.hero-team__person--back {
-    transform: scale(1.05);
-    transform-origin: center bottom;
-    z-index: 1;
-    /* padding-left: 10%; */
-}
-
-.hero-team__person {
+.box-container {
     display: flex;
-    /* -ms-flex: 1 1 auto; */
-    flex: 1 1 auto;
-    justify-content: center;
-    height: 50%;
-    /* position: relative; */
-    /* width: 16.5%;
-    height: 16.66%; */
-    background-color: red;
-    /* z-index: 55; */
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    margin-left: 5%;
+    max-width: 1200px;
+    /* margin: 0 auto; */
+    /* top: 20%; */
+    height: 50vh;
+    /* margin-top: 250vh; */
 
 }
 
-.hero-team__person-link {
-    bottom: 0;
-    cursor: pointer;
-    display: block;
-    /* left: 50%; */
-    position: absolute;
-    text-decoration: none;
-    transform: translate(-50%);
+h5 {
+    margin-bottom: 10px;
+
 }
