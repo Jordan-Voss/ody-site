@@ -26,8 +26,10 @@ nav {
 
 .lgo {
   margin-left: 50px;
-  font-size: 1.8rem;
-  height: 9vh;
+  /* font-size: 1.8rem; */
+  top:10;
+  height: 15vh;
+  width: auto;
   z-index: 50;
 }
 

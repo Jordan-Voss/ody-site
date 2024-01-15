@@ -24,7 +24,9 @@
     /* -ms-flex-align: center; */
     margin-top: -10vh;
     align-items: center;
-    background: url('../../public/images/Promo\ \(5\ of\ 20\).JPG');
+    background-color: black;
+
+    /* url('../../public/images/Promo\ \(5\ of\ 20\).JPG'); */
     background-position: bottom;
     background-repeat: no-repeat;
     background-size: cover;
@@ -33,12 +35,12 @@
     flex: 1 0 auto;
     /* -ms-flex-direction: column; */
     /* flex-direction: column; */
-    justify-content: space-between;
+    /* justify-content: space-between; */
     /* padding-top: 3.75em; */
     text-align: center;
     /* transform: translate(0%, -80px); */
 
-    height: 100vh;
+    /* height: 100vh; */
 }
 
 .hero-team__img {
@@ -51,6 +53,9 @@
     /* mask: url(#image-mask); */
 
 }
+/* body {
+    background-color: black;
+} */
 
 
 
@@ -63,9 +68,11 @@
     margin-left: 5%;
     max-width: 1200px;
     /* margin: 0 auto; */
-    /* top: 20%; */
-    height: 50vh;
+    margin-top: 50vh;
+    /* height: 50vh; */
+    /* background-color: red; */
     /* margin-top: 250vh; */
+    /* background-color: #242222; */
 
 }
 

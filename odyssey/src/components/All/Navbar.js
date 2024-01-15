@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Button } from "./Button";
+import { Button } from "../Home/Button";
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 import Dropdown from "./Dropdown";
@@ -17,6 +17,7 @@ function Navbar(activePage, activeSubPage) {
   const [mobileDropdown2, setMobileDropdown2] = useState(false);
 
   const [dropdown3, setDropdown3] = useState(false);
+  const [mobileDropdown3, setMobileDropdown3] = useState(false);
 
   const handleClick = () => {
     setClick(!click);
@@ -86,6 +87,7 @@ function Navbar(activePage, activeSubPage) {
     if (window.innerWidth < 769) {
       setMobileDropdown1(!mobileDropdown1);
       setMobileDropdown2(false);
+      setMobileDropdown3(false);
     } else {
       setMobileDropdown1(false);
     }
@@ -94,10 +96,22 @@ function Navbar(activePage, activeSubPage) {
     if (window.innerWidth < 769) {
       setMobileDropdown2(!mobileDropdown2);
       setMobileDropdown1(false);
+      setMobileDropdown3(false);
     } else {
       setMobileDropdown2(false);
     }
   };
+
+  const onClickMobile3 = () => {
+    if (window.innerWidth < 769) {
+      setMobileDropdown1(false);
+      setMobileDropdown2(false);
+      setMobileDropdown3(!mobileDropdown3);
+    } else {
+      setMobileDropdown3(false);
+    }
+  };
+
   useEffect(() => {
     showButton();
     window.addEventListener("scroll", changeNavbarColor);
@@ -202,21 +216,42 @@ function Navbar(activePage, activeSubPage) {
                 {dropdown2 && <Dropdown menuItems="resources" />}
               </li>
             )}
-            <li
-              className=""
-              onMouseEnter={onMouseEnter3}
-              onMouseLeave={onMouseLeave3}
-            >
-              <NavLink
-                to="/services"
-                className="nav-links"
-                onClick={closeMobileMenu}
+
+            {window.innerWidth < 769 ? (
+              <>
+                <li className="mble" onClick={onClickMobile3}>
+                  Coaching &nbsp;
+                  <i className="fas fa-caret-down" />
+                </li>
+                <div
+                  className={`mb-dd-container ${
+                    mobileDropdown3 ? "visible" : "hddn"
+                  }`}
+                >
+                  <MobileDropdown
+                    mobileDropdown={mobileDropdown3}
+                    closeMobileMenu={closeMobileMenu}
+                    menuItems="coaching"
+                  ></MobileDropdown>
+                </div>
+              </>
+            ) : (
+              <li
+                className=""
+                onMouseEnter={onMouseEnter3}
+                onMouseLeave={onMouseLeave3}
               >
-                <span className="nav-text">Coaching</span>
-                <i className="fas fa-caret-down" />{" "}
-              </NavLink>
-              {dropdown3 && <Dropdown menuItems="coaching" />}
-            </li>
+                <NavLink
+                  to="/services"
+                  className="nav-links"
+                  onClick={closeMobileMenu}
+                >
+                  <span className="nav-text">Coaching</span>
+                  <i className="fas fa-caret-down" />
+                </NavLink>
+                {dropdown3 && <Dropdown menuItems="coaching" />}
+              </li>
+            )}
             <li>
               <a
                 className="social-icon-link facebook"

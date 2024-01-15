@@ -1,14 +1,14 @@
 import React from "react";
 import "../App.css";
-import HeroSection from "../components/HeroSection";
-import Footer from "../components/Footer";
-import Philosophy from "../components/Philosophy";
-import About from "../components/About";
-import Pricing from "../components/Pricing";
+import HeroSection from "../components/Home/HeroSection";
+import Footer from "../components/All/Footer";
+import Philosophy from "../components/Home/Philosophy";
+import About from "../components/Home/About";
+import Pricing from "../components/Home/Pricing";
 // import Spotify from "../components/Spotify";
-import Slideshow from "../components/Slideshow";
-import Gallery from "../components/Gallery";
-import SpotifyComponent from "../components/Spotify";
+import Slideshow from "../components/Home/Slideshow";
+import Gallery from "../components/Home/Gallery";
+import SpotifyComponent from "../components/Home/Spotify";
 
 function Home() {
   return (

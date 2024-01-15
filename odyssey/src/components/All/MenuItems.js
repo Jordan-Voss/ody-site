@@ -28,8 +28,8 @@ export const AboutMenuItems = [
     cName: "dropdown-link",
   },
   {
-    title: "b",
-    path: "/products",
+    title: "Our Values",
+    path: "/values",
     cName: "dropdown-link",
   },
   {

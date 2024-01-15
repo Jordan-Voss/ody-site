@@ -1,9 +1,9 @@
 import React from "react";
 import "../App.css";
-import Footer from "../components/Footer";
-import ImageHeader from "../components/ImageHeader";
-import ScrollContentComponent from "../components/ScrollContentComponent";
-import Team from "../components/Team";
+import Footer from "../components/All/Footer";
+import ImageHeader from "../components/Coaches/ImageHeader";
+import ScrollContentComponent from "../components/All/ScrollContentComponent";
+import Team from "../components/Coaches/Team";
 
 function Coaches() {
   return (

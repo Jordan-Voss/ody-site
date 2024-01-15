@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import SpotifyComponent from "../components/Spotify";
+import SpotifyComponent from "../Home/Spotify";
 
 const ScrollContentComponent = () => {
   // state to store the content
